@@ -3,13 +3,13 @@ title: "GPT4相当のLLMをローカルで自由に学習させたい"
 emoji: "😽"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [AI, LLM, kubernetes]
-published: false
+published: true
 ---
 
 # 1. 概要
 
-本記事では、Meta の LLM である Llama3 70B モデル を RTX3090(24GB)を搭載した計算機二台で分散学習する手法について紹介します。
-kubernetes で作成した オンプレミスの GPU クラスタ（RTX3090×2）にて、FSDP_QLoRa という手法を活用した分散学習を行うことで、24GB GPU を搭載した PC 二台という比較的実現しやすい環境での学習を実現します。
+- 本記事では、Meta の LLM である Llama3 70B モデル を RTX3090(24GB)を搭載した計算機二台で分散学習する手法について紹介します。
+- kubernetes で作成した オンプレミスの GPU クラスタ（RTX3090×2）にて、FSDP_QLoRa という手法を活用した分散学習を行うことで、24GB GPU を搭載した PC 二台という比較的実現しやすい環境での学習を実現します。
 
 # 2. 前提
 
@@ -31,11 +31,12 @@ https://github.com/AnswerDotAI/fsdp_qlora
 
 ## kubernetes の使用 について
 
-- kubernetes を採用した理由は、既に kubernetes で構築した GPU クラスタがあったからです。
-  FSDP_QLoRa の GitHub にて、マルチノード学習のサンプルスクリプトが公開されていますが、そちらでは Slurm というジョブスケジューラーが活用されています。
+- kubernetes を採用した理由は、既に kubernetes で構築した GPU クラスタが使える状態だったからです。
+- FSDP_QLoRa の GitHub にて、マルチノード学習のサンプルスクリプトが公開されていますが、そちらでは Slurm というジョブスケジューラーが活用されています。
 
 - kubernetes による GPU クラスタ作成方法はこちらを参考にしてください。
-  https://zenn.dev/kato0209/articles/728af83313a324
+
+https://zenn.dev/kato0209/articles/728af83313a324
 
 &nbsp;
 :::details FSDP_QLoRa マルチノード学習サンプルスクリプト
