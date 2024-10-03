@@ -2,7 +2,7 @@
 title: "GPT4相当のLLMをローカルで自由に学習させたい"
 emoji: "😽"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [AI, LLM, kubernetes]
+topics: [AI, LLM, kubernetes, "分散学習", "機械学習"]
 published: true
 ---
 
